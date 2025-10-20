@@ -54,7 +54,9 @@ export const DashboardAdmin = () => {
           <h1 className="text-3xl font-bold text-gray-800">Dashboard Administrativo</h1>
           <button
             onClick={() => {
+              localStorage.removeItem("auth");
               localStorage.removeItem("user");
+              window.location.href = "/";
               navigate("/");
             }}
             className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-xl"

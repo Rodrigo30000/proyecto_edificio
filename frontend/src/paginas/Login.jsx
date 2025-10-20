@@ -59,11 +59,21 @@ export const Login = () => {
       }
 
       // ************Guarda datos mínimos (si quieres mantener sesión)
-      localStorage.setItem(
-        "user",
-        JSON.stringify({ username: form.username, rol: data.rol })
-      );
+              // ✅ Guarda token + rol para llamadas protegidas
+        localStorage.setItem(
+          "auth",
+          JSON.stringify({
+            token: data.token,                 // <--- IMPORTANTÍSIMO
+            rol: data.rol,
+            username: data.username || form.username
+          })
+        );
 
+        // (opcional) mantén la compatibilidad con lo que ya tenías
+        localStorage.setItem(
+          "user",
+          JSON.stringify({ username: form.username, rol: data.rol })
+        );
       // ********Redirigir según el rol
       if (data.rol === "admin") {
         navigate("/dashboardAdmin");

@@ -21,6 +21,8 @@
     "mysql2": "^3.15.1",
     "node-fetch": "^3.3.2",
     "nodemon": "^3.1.10",
-    "react-google-recaptcha": "^3.1.0"
+    "pdfkit": "^0.17.2",
+    "react-google-recaptcha": "^3.1.0",
+    "stripe": "^19.1.0"
   }
 }
